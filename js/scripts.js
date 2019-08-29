@@ -19,27 +19,31 @@ function Ticket(movieName, matinee, age) {
 }
 Ticket.prototype.nameDiscount = function() {
   if (this.movieName === "godfather") {
-    return this.ticket === -5
+    return this.nameDiscount === -5
   } else {
-    return this.ticket === 0
+    return this.nameDiscount === 0
   }
 }
 Ticket.prototype.matineeDiscount = function() {
   if (this.matinee === "morning") {
-    return this.ticket === -5
+    return this.matineeDiscount === -5
   } else {
-    return this.matinee === 0
+    return this.matineeDiscount === 0
   }
 }
 Ticket.prototype.ageDiscount = function () {
   if (this.age === "children" || this.age === "senior") {
-    return this.ticket === -5
+    return this.ageDiscount === -5
   } else {
-    return this.age === 0
+    return this.ageDiscount === 0
   }
 }
+function ticketPrice () {
+  this.currentPrice === 30   
+}
+
 Ticket.prototype.ticketPrice = function () {
-  this.ticket = 30;
+  return this.currentPrice + this.nameDiscount + this.matineeDiscount + this.ageDiscount
 }
 
 
