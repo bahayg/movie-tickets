@@ -39,17 +39,17 @@ Ticket.prototype.calcPrice = function () {
 $(document).ready(function() {
   $("form#movies").submit(function(event) {
     event.preventDefault();
+
     var inputtedMovieName = $("input:checkbox[name=movie]:checked").val();
     var inputtedMatinee = $("input:checkbox[name=matinee]:checked").val();
     var inputtedAge = $("input:checkbox[name=age]:checked").val();
 
     var newTicket = new Ticket (inputtedMovieName, inputtedMatinee, inputtedAge, 30);
     //console.log(newTicket.calcPrice());
+
     $("#price").show();
     $("#price").text("Your ticket price is " + newTicket.calcPrice());
 
-    $("input#new-movie-name").val("");
-    $("input#new-matinee").val("");
-    $("input#new-age").val("");
+    $("input:checkbox").prop("checked", false);
   });
 });
